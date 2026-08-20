@@ -1,0 +1,31 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+venv/
+env/
+.venv/
+.env
+
+# Distribución / empaquetado
+build/
+dist/
+*.egg-info/
+
+# Flask
+instance/
+.flaskenv
+
+# Datos locales de la app
+usuarios.json
+
+# Logs
+*.log
+
+# Editores / SO
+.vscode/
+.idea/
+*.swp
+.DS_Store

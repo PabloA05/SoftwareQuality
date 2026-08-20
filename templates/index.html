@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción | Gestión de la Calidad de Software</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="page-shell">
+        <section class="hero">
+            <div class="brand-pill">Universidad Nacional de Córdoba · 2026</div>
+            <h1>Gestión de la Calidad de Software</h1>
+            <p class="subtitle">
+                Formulario de inscripción a la materia. Completá tus datos para registrar tu inscripción.
+            </p>
+
+            <div class="course-meta">
+                <span>Actividad práctica</span>
+                <span class="dot">•</span>
+                <span>{{ total_inscriptos }} inscripto{% if total_inscriptos != 1 %}s{% endif %}</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-header">
+                <div>
+                    <span class="eyebrow">Inscripción</span>
+                    <h2>Datos del estudiante</h2>
+                </div>
+                <div class="status-badge">Formulario activo</div>
+            </div>
+
+            {% if mensaje %}
+            <div class="success-message" role="status">
+                <span class="success-icon">✓</span>
+                <div>
+                    <strong>{{ mensaje }}</strong>
+                    <p>Los datos fueron almacenados localmente.</p>
+                </div>
+            </div>
+            {% endif %}
+
+            <form id="registration-form" action="/inscripcion" method="POST">
+                <div class="form-grid">
+                    <label>
+                        <span>Nombre</span>
+                        <input type="text" name="nombre" placeholder="Ej. Ana" required>
+                    </label>
+
+                    <label>
+                        <span>Apellido</span>
+                        <input type="text" name="apellido" placeholder="Ej. Gómez" required>
+                    </label>
+
+                    <label>
+                        <span>DNI</span>
+                        <input type="text" name="dni" placeholder="Ej. 40123456" required>
+                    </label>
+
+                    <label>
+                        <span>Legajo</span>
+                        <input type="text" name="legajo" placeholder="Ej. 123456" required>
+                    </label>
+
+                    <label class="full-width">
+                        <span>Email</span>
+                        <input type="email" name="email" placeholder="nombre@ejemplo.com" required>
+                    </label>
+                </div>
+
+                <button id="submit-button" type="submit">
+                    <span>Inscribirme a la materia</span>
+                    <span class="arrow">→</span>
+                </button>
+            </form>
+
+            <p class="privacy-note">
+                Los datos de esta actividad se guardan únicamente en el archivo local <code>usuarios.json</code>.
+            </p>
+        </section>
+
+        <footer>
+            Gestión de la Calidad de Software · UNC · 2026
+        </footer>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
