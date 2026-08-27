@@ -123,9 +123,20 @@ La idea es verificar que mejoramos aspectos internos del código sin modificar e
 ## Preguntas de cierre
 
 - ¿La aplicación funcionaba antes de ejecutar Ruff?
+
+Si estaba funcionando anteriomente
+
 - ¿Qué tipo de problemas pudo detectar el linter sin ejecutar la aplicación?
+
+Pudo detectar dependecias sin usar, variables sin usar y un error con una excepcion no especifica
+
 - ¿Corregir los problemas detectados modificó el comportamiento del sistema?
+
+
+
 - ¿Qué valor puede aportar una herramienta de linting dentro de un proceso de calidad de software?
+
+
 
 ---
 
