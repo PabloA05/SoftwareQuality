@@ -118,6 +118,18 @@ Realizar una nueva inscripción y comprobar que el sistema continúa funcionando
 
 La idea es verificar que mejoramos aspectos internos del código sin modificar el comportamiento esperado de la aplicación.
 
+## 6. Ejecutar los tests
+
+Desde la raíz del repositorio, instalar las dependencias y ejecutar:
+
+```bash
+python -m pip install -r Linter/requirements.txt
+python -m pytest Linter/tests
+```
+
+Los tests usan un archivo JSON temporal, por lo que no modifican las inscripciones de `usuarios.json`.
+También se ejecutan automáticamente en GitHub Actions con cada *push* y *pull request*.
+
 ---
 
 ## Preguntas de cierre
